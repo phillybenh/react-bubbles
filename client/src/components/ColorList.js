@@ -11,9 +11,9 @@ const initialNewColor = {
   code: { hex: "" }
 };
 
-const ColorList = ({ colors, updateColors }) => {
+const ColorList = ({ colors, updateColors, editing, setEditing }) => {
   console.log(colors);
-  const [editing, setEditing] = useState(false);
+  // const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
   const [newColor, setNewColor] = useState(initialNewColor)
 
@@ -34,7 +34,7 @@ const ColorList = ({ colors, updateColors }) => {
         console.log({ res })
         // updateColors([...colors, res.data])
         setEditing(false);
-        window.location.reload(false);
+        // window.location.reload(false);
       })
       .catch(err => console.log(err))
   };
